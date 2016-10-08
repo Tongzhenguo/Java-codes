@@ -1,4 +1,4 @@
-package data.code;
+package data.code.util;
 
 import java.io.Serializable;
 import java.util.Collections;
