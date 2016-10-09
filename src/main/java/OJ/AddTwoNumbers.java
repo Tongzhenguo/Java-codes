@@ -60,46 +60,40 @@ public class AddTwoNumbers {
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-            ListNode p = l1;
-            ListNode q = l1.next;//始终指向头节点
-            ListNode next1;
-            ListNode m = l2;
-            ListNode n = l2.next;//始终指向头节点
-            ListNode next2;
-            //假定两个链表的元素一样多
-
-        while (q != null && n !=null) {
-                next1 = q.next;
-                next2 = n.next;
-                q.next = p;
-                n.next = m;
-                //move
-                p = q;
-                m = n;
-                q = next1;
-                n = next2;
-            }
-        //将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
-        l1.next = null;
-        l1 = p;
-        l2.next = null;
-        l2 = m;
-
+        ListNode p = reverse2(l1);
+        ListNode m = reverse2(l2);
         int result = 0;
             int r = 0;//r 是进位
             ListNode l3 = new ListNode(0);
             ListNode k = l3;
-            while(q!=null && n!=null){
-                result = (q.val + n.val+r);
+            while(p!=null || m!=null){
+                if(p==null){
+                    result = 0 + m.val+r;
+                }
+                else if(m==null){
+                    result = 0 + p.val+r;
+                }
+                else {
+                    result = (p.val + m.val+r);
+                }
                 int v = result % 10;
                 k.next = new ListNode(v);
                 //move
-                q = q.next;
-                n = n.next;
+                if(p!=null){
+                    p = p.next;
+                }
+                if(m!=null){
+                    m = m.next;
+                }
                 k = k.next;
                 if(result>=10){
                     r = 1;
+                }else {
+                    r = 0;
                 }
+            }
+            if (r==1){
+                k.next = new ListNode(1);
             }
             return l3.next;
     }
@@ -116,9 +110,9 @@ public class AddTwoNumbers {
         n2.next = n121;
         n121.next = null;
         n3.next = n4;
-        n4.next = n341;
+        n4.next = null;
         n341.next = null;
-        /*ListNode reverse = new AddTwoNumbers().reverse2(n1);
+      /*  ListNode reverse = new AddTwoNumbers().reverse(n1);
         while(reverse!=null){
             System.out.println(reverse.val);
             reverse = reverse.next;
