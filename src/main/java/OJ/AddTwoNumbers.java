@@ -3,10 +3,13 @@ package OJ;
 /**
  * Created by YYT on 2016/10/9.
  * 给你两个链表表示两个非负数字。
- * 将结果以相反的顺序存储和每个节点包含一个数字。
+ * 每个节点存储一位数字，从低到高排列。
+ * 计算连数字的和
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 0 -> 8
- *  => 243 + 564 = 807
+ *  =>  2+5+0=７
+ *  ＝> 4+6+0=0
+ *  =>  3+4+1=8
  *  => (7->0->8)
  */
 
@@ -50,52 +53,44 @@ public class AddTwoNumbers {
     }
 
 
-    /**
-     *折腾了一上午，终于把题干和反转单链表搞通了
-     * 下面把我的想法描述下，希望可以通过。
-     * 先遍历两个链表将其反转
-     * 再遍历一次反转后的两个链表
-     * 每移动一次，都向结果链表中插入一个数字
-     * 时间复杂度应该是O(n)
-     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        ListNode p = reverse2(l1);
-        ListNode m = reverse2(l2);
+        ListNode p = l1;
+        ListNode m = l2;
         int result = 0;
-            int r = 0;//r 是进位
-            ListNode l3 = new ListNode(0);
-            ListNode k = l3;
-            while(p!=null || m!=null){
-                if(p==null){
-                    result = 0 + m.val+r;
-                }
-                else if(m==null){
-                    result = 0 + p.val+r;
-                }
-                else {
-                    result = (p.val + m.val+r);
-                }
-                int v = result % 10;
-                k.next = new ListNode(v);
-                //move
-                if(p!=null){
-                    p = p.next;
-                }
-                if(m!=null){
-                    m = m.next;
-                }
-                k = k.next;
-                if(result>=10){
-                    r = 1;
-                }else {
-                    r = 0;
-                }
+        int r = 0;//r 是进位
+        ListNode l3 = new ListNode(0);//头指针，数据无意义
+        ListNode k = l3;
+        while(p!=null || m!=null){
+            if(p==null){
+                result = 0 + m.val+r;
             }
-            if (r==1){
-                k.next = new ListNode(1);
+            else if(m==null){
+                result = 0 + p.val+r;
             }
-            return l3.next;
+            else {
+                result = (p.val + m.val+r);
+            }
+            int v = result % 10;
+            k.next = new ListNode(v);
+            //move
+            if(p!=null){
+                p = p.next;
+            }
+            if(m!=null){
+                m = m.next;
+            }
+            k = k.next;
+            if(result>=10){
+                r = 1;
+            }else {
+                r = 0;
+            }
+        }
+        if (r==1){
+            k.next = new ListNode(1);
+        }
+        return l3.next;
     }
 
     public static void main(String[] args) {
