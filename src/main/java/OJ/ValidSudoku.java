@@ -43,7 +43,8 @@ public class ValidSudoku {
         Map<String,Vector<Integer>> zone = new HashMap<String, Vector<Integer>>(9){{
             for(int i=0;i<3;i++){
                 for(int j=0;j<3;j++){
-                    put(i/3+"-"+j/3,new Vector<Integer>(9));
+                    Vector<Integer> vector = new Vector<Integer>(9);
+                    put(i/3+"-"+j/3, vector);
                 }
             }
 
@@ -69,9 +70,29 @@ public class ValidSudoku {
         ValidSudoku sudu = new ValidSudoku();
         char[][] chars = new char[9][9];
         for(int i=0;i<9;i++){
-            for(int j=0;j<9;j++) {
-                chars[i][j] = (char)('0'+i+1);
+            if(i ==0){
+                for(int j=0;j<9;j++) {
+                    if(j==0){
+                        chars[i][j] = '.';
+                        System.out.print(chars[i][j]);
+                    }else {
+                        chars[i][j] = (char) (9 - j + '0');
+                        System.out.print(chars[i][j]);
+                    }
+                }
+                System.out.println();
             }
+            for(int j=0;j<9;j++) {
+                if(j == 0) {
+                    chars[i][0] = (char) ('0' + i + 1);
+                    System.out.print(chars[i][j]);
+                }
+                else{
+                    chars[i][j] = '.';
+                    System.out.print(chars[i][j]);
+                }
+            }
+            System.out.println();
             }
 
         System.out.println(sudu.isValidSudoku(chars));
