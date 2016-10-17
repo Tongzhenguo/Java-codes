@@ -25,4 +25,8 @@ public class SumTwoIntegers {
         }
         return a;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new SumTwoIntegers().getSum(-1,1));
+    }
 }
