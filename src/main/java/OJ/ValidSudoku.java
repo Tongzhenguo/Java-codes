@@ -24,6 +24,7 @@ public class ValidSudoku {
                     return false;
                 }
                 //表示出现过
+                // 表示同一个九宫格：i-i%3+j/3
                 row[num][i]=col[num][j]=block[num][i-i%3+j/3]=true;
             }
         }
