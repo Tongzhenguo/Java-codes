@@ -40,8 +40,17 @@ public class AddDigits {
      */
     public int addDigits(int num){
         //return (num-1)%9+1;
-        //任何数加9的数字根还是它本身。
-        return num%9;
+        /**树根的两条性质
+         * 1.任何数加9的数字根还是它本身
+         * 2.9乘任何数字的数字根都是9。
+         * 可以将b=(num-1)%9+1这个公式看作这两个性质的总结吧
+         *
+         */
+        if(num==0){
+            return 0;
+        }else {
+            return num%9 ==0?9:num%9;
+        }
     }
 
     public static void main(String[] args) {
@@ -49,7 +58,7 @@ public class AddDigits {
         /*System.out.println(o.addDigits(38));
         System.out.println(o.addDigits(3829));*/
         //System.out.println(o.addDigits(100));
-        System.out.println(o.addDigits(708538619));
+        System.out.println(o.addDigits(100));
        /* System.out.println(Integer.MAX_VALUE);*/
     }
 }
