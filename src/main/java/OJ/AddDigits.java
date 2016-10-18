@@ -55,9 +55,7 @@ public class AddDigits {
 
     public static void main(String[] args) {
         AddDigits o = new AddDigits();
-        /*System.out.println(o.addDigits(38));
-        System.out.println(o.addDigits(3829));*/
-        //System.out.println(o.addDigits(100));
+
         System.out.println(o.addDigits(100));
        /* System.out.println(Integer.MAX_VALUE);*/
     }
