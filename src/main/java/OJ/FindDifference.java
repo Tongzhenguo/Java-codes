@@ -35,7 +35,6 @@ public class FindDifference {
             tIDX++;
             tchar = "" + tchars[tIDX];
         }
-
         return tchars[tIDX];
     }
 
