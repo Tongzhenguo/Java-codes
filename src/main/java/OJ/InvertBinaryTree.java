@@ -24,15 +24,11 @@ public class InvertBinaryTree {
          * 网上看到的方法
          */
         if(root == null ){
-            return root;
+            return null;
         }
-        if(root.left!=null && root.right!=null) {
-            TreeNode t = root.left;
-            root.left = root.right;
-            root.right = t;
-        }
-        invertTree(root.left);
-        invertTree(root.right);
+        TreeNode t = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(t);
         return root;
     }
 
@@ -41,10 +37,10 @@ public class InvertBinaryTree {
         TreeNode left = new TreeNode(443);
         TreeNode right = new TreeNode(444);
         TreeNode node = new TreeNode(445);
+        left.left = node;
         rt.left = left;
         rt.right = right;
-        rt.left.left = node;
 
-        System.out.println(new InvertBinaryTree().invertTree(rt).right.left.val);
+        System.out.println(new InvertBinaryTree().invertTree(rt).left.right);
     }
 }
