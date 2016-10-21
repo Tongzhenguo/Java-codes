@@ -16,8 +16,8 @@ import java.util.Set;
  */
 public class MyCachePrograme {
 
-    static final String  host = "192.168.1.242";
-    static final int port =  7025;
+    static final String  host = "***";
+    static final int port =  8000;
     private static final int batchSize = 2000;
     private static Jedis jedis = null;
     private static long index = 0;

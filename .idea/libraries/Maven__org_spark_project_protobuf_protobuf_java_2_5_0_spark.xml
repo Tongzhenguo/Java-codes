@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.spark-project.protobuf:protobuf-java:2.5.0-spark">
     <CLASSES>
-      <root url="jar://E:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark.jar!/" />
+      <root url="jar://D:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://E:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark-javadoc.jar!/" />
+      <root url="jar://D:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://E:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark-sources.jar!/" />
+      <root url="jar://D:/repos/org/spark-project/protobuf/protobuf-java/2.5.0-spark/protobuf-java-2.5.0-spark-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
