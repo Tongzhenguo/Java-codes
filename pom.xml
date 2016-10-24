@@ -23,7 +23,7 @@
       <scope>test</scope>
     </dependency>
    <!--         hadoop       -->
-    <dependency>
+    <!--<dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-client</artifactId>
       <version>2.4.0</version>
@@ -66,7 +66,7 @@
       <groupId>org.cloudera.htrace</groupId>
       <artifactId>htrace-core</artifactId>
       <version>2.01</version>
-    </dependency>
+    </dependency>-->
     <!--        spark          -->
     <dependency>
       <groupId>org.apache.spark</groupId>
@@ -85,11 +85,11 @@
       <artifactId>jedis</artifactId>
       <version>2.5.1</version>
     </dependency>
-    <dependency>
+   <!-- <dependency>
       <groupId>commons-pool</groupId>
       <artifactId>commons-pool</artifactId>
       <version>1.5.6</version>
-    </dependency>
+    </dependency>-->
 
   </dependencies>
 </project>
