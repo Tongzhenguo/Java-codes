@@ -1,6 +1,7 @@
 package OJ;
 
 /**
+<<<<<<< Updated upstream
  * Created by YYT on 2016/10/26.
  * Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
 
