@@ -1,7 +1,7 @@
 # coderepos
-平时积累的java代码做成一个库
+平时积累的java代码
 
-Normalization 是常见的数据标准化方法
+leetcode刷题
 
 对数似然率相似度： 
     计算步骤如下：
@@ -14,4 +14,6 @@ Normalization 是常见的数据标准化方法
     UserSimilarity=2∗(matrixEntropy−rowEntropy−columnEntropy)
     
 redis缓存，解决mysql查询压力过大
+
+结合SimHash计算相似度（推荐系统，减少海量数据存储与计算）
 
