@@ -11,6 +11,27 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jdk1.7" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/Weka-3-8/weka.jar!/" />
+          <root url="file://D:/Weka-3-8" />
+          <root url="file://D:/Weka-3-8" />
+          <root url="jar://D:/Weka-3-8/wekaexamples.zip!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://D:/Weka-3-8/doc" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="file://D:/Weka-3-8" />
+          <root url="jar://D:/Weka-3-8/weka-src.jar!/src/main/java" />
+          <root url="jar://D:/Weka-3-8/weka-src.jar!/src/test/java" />
+          <root url="jar://D:/Weka-3-8/wekaexamples.zip!/src/main/java" />
+        </SOURCES>
+        <jarDirectory url="file://D:/Weka-3-8" recursive="false" />
+        <jarDirectory url="file://D:/Weka-3-8" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.10:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.twitter:chill_2.10:0.5.0" level="project" />
