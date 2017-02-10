@@ -6,14 +6,19 @@ import java.util.StringTokenizer;
 
 
 /**
- * simhash算法的输入是一个向量（n维）,输出是一个 f 位的签名值,f<n,这其实是一种降维技术，将高维的向量用较低维度的签名来表征。
+ * simhash算法的输入是一个向量（n维01向量）,输出是一个 f 位的签名值,f<n,这其实是一种降维技术，将高维的向量用较低维度的签名来表征。
  *  simhash 算法如下：
  1，将一个 f 维的向量 V 初始化为 0 ； f 位的二进制数 S 初始化为 0 ；
- 2，对每一个特征：用传统的 hash 算法对该特征产生一个 f 位的签名 b 。对 i=1 到 f ：
+ 2，对每一个特征：用传统的 hash 算法对该特征产生一个 f 位的签名 b 。
+ 对 i=1 到 f ：
     如果b的第i位为1,则V的第i个元素加上该特征的权重；
     否则,V的第i个元素减去该特征的权重。
  3，如果 V 的第 i 个元素大于 0 ，则 S 的第 i 位为 1 ，否则为 0 ；
  4，输出 S 作为签名。
+ 可以通过《数学之美》中的信息指纹相关章节对simHash算法简单记忆为以下两步：
+ 扩展和收缩，其中扩展是指将向量的每一位扩展为一个实数，收缩相反；其中具体的实数指就是这个位对应的权重，
+ 举个例子，如果是词向量，那么这个权重可以使TF-IDF,如果是字符串，这个权重可以是这个字符的ASCII码值；
+ 扩展根据01进行加减，收缩根据正负转成01
 
  *汉明距离计算相似度：
  这个算法相当于随机产生了f个n维超平面，每个超平面将向量v所在的空间一分为二，
@@ -21,6 +26,7 @@ import java.util.StringTokenizer;
  如果两个向量u, v的夹角为θ，则一个随机超平面将它们分开的概率为θ/π，因此u, v的签名的对应位不同的概率等于θ/π。
  所以，我们可以用两个向量的签名的不同的对应位的数量，即汉明距离，来衡量这两个向量的差异程度。
 
+  注：这里就是字符串对应的simHash值就是数学之美中所讲的“信息指纹”
  * tips:根据经验值，对 64 位的 SimHash ，海明距离在 3 以内的可以认为相似度比较高。
 
 
@@ -83,7 +89,7 @@ public class SimHash {
 			}
 		}
 		this.strSimHash = simHashBuffer.toString();
-		System.out.println("strSimHash "+this.strSimHash + " length " + this.strSimHash.length());
+//		System.out.println("strSimHash "+this.strSimHash + " length " + this.strSimHash.length());
 		return fingerprint;
 	}
 
@@ -140,7 +146,7 @@ public class SimHash {
 			if ((i + 1) % numEach == 0) {
 				// 将二进制转为BigInteger
 				BigInteger eachValue = new BigInteger(buffer.toString(), 2);
-				System.out.println("----eachValue " + eachValue);
+//				System.out.println("----eachValue " + eachValue);
 				buffer.delete(0, buffer.length());
 				characters.add(eachValue);
 			}
@@ -150,19 +156,36 @@ public class SimHash {
 	}
 
 	public static void main(String[] args) {
-		String s = "This is a test string for testing";
-		SimHash hash1 = new SimHash(s, 64);
-		System.out.println("intSimHash " + hash1.intSimHash + "  " + "bitLength " + hash1.intSimHash.bitLength());
-		hash1.subByDistance(hash1, 3);
 
-        s = "This is a test string for testing, This is a test string for testing abcdef";
-		SimHash hash2 = new SimHash(s, 64);
-		System.out.println(hash2.intSimHash + "  " + hash2.intSimHash.bitCount());
-		hash1.subByDistance(hash2, 3);
+//		String s = "This is a test string for testing";
+//		SimHash hash1 = new SimHash(s, 64);
+////		System.out.println("intSimHash " + hash1.intSimHash + "  " + "bitLength " + hash1.intSimHash.bitLength());
+//		hash1.subByDistance(hash1, 3);
+//
+//        s = "This is a test string for testing, This is a test string for testing abcdef";
+//		SimHash hash2 = new SimHash(s, 64);
+//		System.out.println(hash2.intSimHash + "  " + hash2.intSimHash.bitCount());
+//		hash1.subByDistance(hash2, 3);
+//
+//		System.out.println("============================");
+//		//计算汉明距离，距离越大，相似度越低
+//		System.out.println("hammingDistance "+hash1.hammingDistance(hash2));
 
-		System.out.println("============================");
-		//计算汉明距离，距离越大，相似度越低
-		System.out.println("hammingDistance "+hash1.hammingDistance(hash2));
+        /*
+        * 测试数学之美中判断数组内容完全相同的算法
+        *
+        String[] list1 = {"《数学之美》读后感| 忆桐之家的博客","数学之美读书笔记（四） - 程序园","《数学之美》的笔记-全书 - 豆瓣读书"};
+        String[] list2 = {"《数学之美》的笔记-全书 - 豆瓣读书","数学之美读书笔记（四） - 程序园","《数学之美》读后感| 忆桐之家的博客"};
+        BigInteger res1 = new BigInteger("0");BigInteger res2 = new BigInteger("0");
+        for(int i=0;i<3;i++){
+            BigInteger n1 = new SimHash(list1[i], 64).simHash();
+            System.out.println(n1);
+            BigInteger n2 = new SimHash(list2[i], 64).simHash();
+            System.out.println(n2);
+            res1 = res1.add(n1);res2 = res2.add(n2);
+        }
+        System.out.println(res1.subtract(res2) );
+        */
 
 	}
 }
