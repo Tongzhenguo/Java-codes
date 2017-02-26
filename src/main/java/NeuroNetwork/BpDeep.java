@@ -2,6 +2,7 @@ package NeuroNetwork;
 
 /**
  * Created by arachis on 2017/2/26.
+ * http://blog.csdn.net/bryan__/article/details/51288701
  */
 import java.util.Random;
 public class BpDeep{
