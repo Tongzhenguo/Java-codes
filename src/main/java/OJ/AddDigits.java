@@ -1,5 +1,8 @@
 package OJ;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by YYT on 2016/10/17.
  * Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
@@ -54,9 +57,18 @@ public class AddDigits {
     }
 
     public static void main(String[] args) {
-        AddDigits o = new AddDigits();
+
+        final List<String> ageRanges = new ArrayList<String>(8){{
+            add("1-14");add("15-19");add("20-24");
+            add("25-29");add("30-34");add("35-39");
+            add("40-44");add("45-100");
+        }};
+
+        System.out.println(ageRanges.get( Integer.parseInt("8.0".substring(0, 1)) ));;
+
+       /* AddDigits o = new AddDigits();
 
         System.out.println(o.addDigits(100));
-       /* System.out.println(Integer.MAX_VALUE);*/
+       *//* System.out.println(Integer.MAX_VALUE);*/
     }
 }
