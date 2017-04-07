@@ -1,3 +1,4 @@
+/*
 package neuroph;
 
 import org.neuroph.core.Layer;
@@ -10,9 +11,11 @@ import org.neuroph.nnet.comp.neuron.ThresholdNeuron;
 import org.neuroph.nnet.learning.BinaryDeltaRule;
 import org.neuroph.util.*;
 
+*/
 /**
  * Created by arachis on 2017/1/15.
- */
+ *//*
+
 public class CreateNetWork extends NeuralNetwork{
     private void createNetWork(int inputNeuronsCount,int outputNeuronsCount,TransferFunctionType transferFunctionType){
         //设置神经网络类型，这里我们设置为感知机
@@ -70,3 +73,4 @@ public class CreateNetWork extends NeuralNetwork{
     }
 
 }
+*/
