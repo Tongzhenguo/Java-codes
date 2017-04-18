@@ -13,7 +13,13 @@ package OJ;
  1,1,5 → 1,5,1
  */
 public class Next_Permutation {
+ public static void main(String[] args) {
+  StringBuffer aaa = new StringBuffer("aaa");
+  aaa.setLength(0);
+  aaa.append("aaa");
+  System.out.println(aaa );
 
+ }
 
 
 }
