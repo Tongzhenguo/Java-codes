@@ -8,11 +8,15 @@ package OJ;
  */
 public class Jump_Game {
     public boolean canJump(int A[]) {
-        int last=A.length-1;
+        int last=A.length-1;// backwards from the last index.
         for(int i=A.length-2;i>=0;i--){//后向遍历，判断从当前位置是否可以到达起始位置
-            if(i+A[i]>=last)last=i;
+            if(i+A[i]>=last) last=i;// Keep track of the smallest index that can "jump" to the last index.
         }
         return last<=0;
+    }
+
+    public static void main(String[] args) {
+        new Jump_Game().canJump( new int[]{ 3,2,1,0,4 } );
     }
 
 }
