@@ -1,3 +1,4 @@
+/*
 package data.code.learntoWeka;
 
 import weka.core.Attribute;
@@ -6,9 +7,11 @@ import weka.core.Instances;
 
 import java.util.Enumeration;
 
+*/
 /**
  * Created by arachis on 2016/12/7.
- */
+ *//*
+
 public class MyInstance implements Instance {
     public MyInstance() {
     }
@@ -221,3 +224,4 @@ public class MyInstance implements Instance {
         return null;
     }
 }
+*/

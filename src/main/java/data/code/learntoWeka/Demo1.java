@@ -1,3 +1,4 @@
+/*
 package data.code.learntoWeka;
 
 import weka.classifiers.Classifier;
@@ -8,10 +9,12 @@ import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 
+*/
 /**
  * Created by arachis on 2016/12/7.
  * link:http://blog.csdn.net/Bryan__/article/details/40902923?locationNum=2&fps=1
- */
+ *//*
+
 public class Demo1 {
 
     static Classifier cModel = null;
@@ -30,10 +33,12 @@ public class Demo1 {
 
     }
 
-    /**
+    */
+/**
      * 第四步：使用这个分类器
      * @param isTrainingSet
-     */
+     *//*
+
     private static void step4(Instances isTrainingSet,Instance iUse) throws Exception {
         // Specify that the instance belong to the training set
         // in order to inherit from the set description
@@ -45,10 +50,12 @@ public class Demo1 {
         double[] fDistribution = cModel.distributionForInstance(iUse);
     }
 
-    /**
+    */
+/**
      * 第三步：测试分类器
      * @param isTrainingSet
-     */
+     *//*
+
     private static void step3(Instances isTrainingSet,Instances isTestingSet) throws Exception {
         // Test the model
         Evaluation eTest = new Evaluation(isTrainingSet);
@@ -63,13 +70,15 @@ public class Demo1 {
         System.out.println(eTest.toMatrixString());
     }
 
-    /**
+    */
+/**
      * 第一步：用特征表达问题（属性）
      这一步相当于构建一个arff文件
      我们先把特征放入weka.core.FastVector中
      每个特征都包含在weka.core.Attribute类中
      现在我们有 两个numeric 特征，一个 nominal 特征 (blue, gray, black) 和一个 nominal 类 (positive, negative).
-     */
+     *//*
+
     private static FastVector step1() {
         // Declare two numeric attributes
         Attribute Attribute1 = new Attribute("firstNumeric");
@@ -97,7 +106,8 @@ public class Demo1 {
         return fvWekaAttributes;
     }
 
-    /**
+    */
+/**
      *第二步：训练分类器
      需要训练集实例和分类器
      我们先创建一个空的训练集（weka.core.Instances）
@@ -105,7 +115,8 @@ public class Demo1 {
      属性模型使用第一步中定义的vector定义
      初始化训练集容量为10
      定义类属性为第一步向量中的第四个（classindex）
-     */
+     *//*
+
     private static Instances step2(FastVector fvWekaAttributes) throws Exception {
         // Create an empty training set
         Instances isTrainingSet = new Instances("Rel", fvWekaAttributes, 10);
@@ -131,3 +142,4 @@ public class Demo1 {
 
 
 }
+*/

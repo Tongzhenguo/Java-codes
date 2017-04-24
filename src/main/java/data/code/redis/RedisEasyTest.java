@@ -1,3 +1,4 @@
+/*
 package data.code.redis;
 
 import org.apache.commons.lang.math.RandomUtils;
@@ -50,4 +51,4 @@ public class RedisEasyTest {
         System.out.printf("batch use %d sec \n", (System.currentTimeMillis() - start) / 1000);  
   
     }  
-}  
+}  */
