@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Spiral_Matrix {
     //上右下左四个边分别变化，每遍历完一个边都要判断下是否已经遍历过
-    public List<Integer> spiralOrder(int[][] matrix) {
+    public List<Integer> generateMatrix(int[][] matrix) {
             List<Integer> res = new ArrayList<Integer>();
             if(matrix.length == 0 || matrix[0].length == 0) return res;
 
@@ -38,5 +38,14 @@ public class Spiral_Matrix {
             }
             return res;
         }
+
+    public static void main(String[] args) {
+        int[][] nums = {{1,2,3},{8,9,4},{7,6,5}};
+        List<Integer> list = new Spiral_Matrix().generateMatrix(nums);
+        for( int i: list ){
+            System.out.println(i);
+        }
+
+    }
 
 }
