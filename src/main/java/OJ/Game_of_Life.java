@@ -29,10 +29,9 @@ package OJ;
  Transition 00 -> 10: when board == 0 and lives == 3.
 
  To get the current state, simply do
-
  board[i][j] & 1
- To get the next state, simply do
 
+ To get the next state, simply do
  board[i][j] >> 1
 
 
@@ -44,6 +43,7 @@ public class Game_of_Life {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
+                //计算活着的邻居格式
                 int lives = liveNeighbors(board, m, n, i, j);
 
                 // In the beginning, every 2nd bit is 0;
@@ -59,7 +59,8 @@ public class Game_of_Life {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                board[i][j] >>= 1;  // Get the 2nd state.
+//              To get the next state, simply do board[i][j] >> 1
+                board[i][j] >>= 1;
             }
         }
     }
@@ -71,6 +72,7 @@ public class Game_of_Life {
                 lives += board[x][y] & 1;
             }
         }
+        //  To get the current state, simply do board[i][j] & 1
         lives -= board[i][j] & 1;
         return lives;
     }

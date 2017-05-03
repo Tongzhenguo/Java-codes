@@ -18,41 +18,19 @@ import java.util.List;
  * 是否可以实现O(1)的算法？
  */
 public class AddDigits {
-    /**
-     * 我的方法：使用了while判断终止和for进行相加，O(n)复杂度
-     * @param num
-     * @return
-     */
-    /*public int addDigits(int num) {
-        byte[] digits = ("" + num).getBytes();
-        while (digits.length !=1){
-            int sum = 0;
-            for(int i=0;i<digits.length;i++){
-                sum +=digits[i]-'0';
-            }
-            digits = ("" + sum).getBytes();
-        }
-        return digits[0]-'0';
-    }*/
 
-    /**
-     * 查看百度百科之后，这是数（字）根的原始问题
-     * 有如下公式 b=(a-1)%9 +１，其中ａ是自然数，b是a的数字根
-     * @param num
-     * @return
-     */
     public int addDigits(int num){
-        //return (num-1)%9+1;
-        /**树根的两条性质
+        /**数字根的两条性质
          * 1.任何数加9的数字根还是它本身
          * 2.9乘任何数字的数字根都是9。
-         * 可以将b=(num-1)%9+1这个公式看作这两个性质的总结吧
-         *
+         * 可以将b=num%9这个公式看作这两个性质的总结吧
+         *  证明 :
+         *    a = 9k + b,由性质2得：a的树根为9+b;再由性质1知道a的数字根就是b
          */
         if(num==0){
             return 0;
         }else {
-            return num%9 ==0?9:num%9;
+            return num%9==0?9:num%9;
         }
     }
 
