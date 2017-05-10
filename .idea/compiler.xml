@@ -25,8 +25,8 @@
         <module name="coderepos" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="coderepos" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="coderepos" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
