@@ -1,3 +1,4 @@
+/*
 package redis;
 
 import org.apache.log4j.Logger;
@@ -8,12 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+*/
 /**
  * 在mysql请求过大的情况下，将数据缓存在redis
  * 先去redis取，没有再去mysql取；并且写入redis
  * 每查询2000次，暂停2s
  * redis的数据类型选用Hash类型
- */
+ *//*
+
 public class MyCachePrograme {
 
     static final String  host = "***";
@@ -138,3 +141,4 @@ public class MyCachePrograme {
     }
 
 }
+*/

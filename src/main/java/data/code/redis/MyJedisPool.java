@@ -1,3 +1,4 @@
+/*
 package data.code.redis;
 
 import org.apache.log4j.Logger;
@@ -102,4 +103,4 @@ public final class MyJedisPool {
             jedisPool.returnResource(jedis);
         }
     }
-}
+}*/
