@@ -31,7 +31,7 @@ import java.util.Map;
  *
  *
  */
-public class Most＿Frequent＿Subtree＿Sum {
+public class Most_Frequent_Subtree_Sum {
     /**
      * Idea is post-order traverse the tree and get sum of every sub-tree, put sum to count mapping to a HashMap.
      * Then generate result based on the HashMap.
