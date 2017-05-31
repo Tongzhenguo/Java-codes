@@ -93,12 +93,15 @@ public class MessageGZIP {
     public static void main(String[] args) {
 
         String str = "hello world";
+        byte[] strBytes = str.getBytes();
         byte[] bytes = MessageGZIP.compressToByte(str);
         String toString = new String(bytes);
         System.out.println( toString );
 
         String uncompressToString = MessageGZIP.uncompressToString(bytes);
         System.out.println( uncompressToString );
+
+
 
     }
 }
