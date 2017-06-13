@@ -5,7 +5,7 @@ package OJ;
  *
  * Sort a linked list in O(n log n) time using constant space complexity.
  */
-public class Sort＿List {
+public class Sort_List {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
