@@ -7,7 +7,7 @@ package OJ;
  Note:
  You are not suppose to use the library's sort function for this problem.
  注：不能使用现有的库函数
- *
+ * 快速排序（partition）
  */
 public class Sort_Colors {
     public void sortColors(int[] nums) {

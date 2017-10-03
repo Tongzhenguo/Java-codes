@@ -3,9 +3,10 @@ package OJ;
 /**
  * Created by arachis on 2017/4/10.
  * 设计算法，在一个二维矩阵中搜索一个数
-   其中矩阵有如下特征：1.每行从左到右递增；每行的第一个数都比上一行最大的数大
+   其中矩阵有如下特征：1.每行从左到右递增；每行的第一个数都比上一行最大的数大（杨氏矩阵）
+
  */
-public class Search_a_2D_Matrix {
+public class   Search_a_2D_Matrix {
     /**
      *  Do binary search in this "ordered" matrix
      */
