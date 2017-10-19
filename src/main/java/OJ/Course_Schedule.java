@@ -46,7 +46,7 @@ public class Course_Schedule {
        for (int i=0; i<numCourses; i++) {
         if (matrix[course][i] != 0) {
          if (--indegree[i] == 0)
-          queue.ofer(i);
+          queue.offer(i);
         }
        }
       }
