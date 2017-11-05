@@ -53,7 +53,7 @@ public class Is_Subsequence {
     //  i=0 ('a'): prev=1
     //  i=1 ('b'): prev=6
     //  i=2 ('c'): prev=? (return false)
-    public boolean isSubsequence(String s, String t) {
+/*    public boolean isSubsequence(String s, String t) {
         List<Integer>[] idx = new List[256]; // Just for clarity
         for (int i = 0; i < t.length(); i++) {
             if (idx[t.charAt(i)] == null)
@@ -70,6 +70,6 @@ public class Is_Subsequence {
             prev = idx[s.charAt(i)].get(j) + 1;
         }
         return true;
-    }
+    }*/
 
 }

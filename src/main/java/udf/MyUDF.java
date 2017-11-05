@@ -1,3 +1,4 @@
+/*
 package udf;
 
 import org.apache.commons.lang.StringUtils;
@@ -8,13 +9,16 @@ import org.json.JSONTokener;
 
 import java.util.ArrayList;
 
+*/
 /**
  * Created by arachis on 2017/10/19.
  * 一个简单的UDF:
  * 解析json array中的指定字段，并用下划线拼接起来
- */
+ *//*
+
 public class MyUDF extends UDF {
-    /**
+    */
+/**
      * 把json array字符串中指定的字段解析出来
      *
      * @param jsonArrayStr 　要解析的json array字符串
@@ -28,7 +32,8 @@ public class MyUDF extends UDF {
      * +-----------+-----------------+--+
      * | NULL      | 1082_1082_1082  |
      * +-----------+-----------------+--+
-     */
+     *//*
+
     public String evaluate(String jsonArrayStr, String column) {
         if ((jsonArrayStr == null) || StringUtils.isBlank(jsonArrayStr) || !jsonArrayStr.trim().startsWith("[")) {
             return null;
@@ -55,4 +60,4 @@ public class MyUDF extends UDF {
 
     }
 
-}
+}*/

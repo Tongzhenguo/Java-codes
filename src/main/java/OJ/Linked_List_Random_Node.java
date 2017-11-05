@@ -24,7 +24,7 @@ public class Linked_List_Random_Node {
     ListNode head;
     Random random;
 
-    public Solution(ListNode h) {
+    public Linked_List_Random_Node(ListNode h) {
         head = h;
         random = new Random();
     }

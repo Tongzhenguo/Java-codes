@@ -13,7 +13,6 @@ import java.util.List;
 public class UndirectedGraphNode {
     public int label;
     public List<UndirectedGraphNode> neighbors;
-    public Integer label;
 
     public UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
 }

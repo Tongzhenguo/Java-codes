@@ -26,7 +26,7 @@ public class Random_Pick_Index {
     int[] nums;
     Random rnd;
 
-    public Solution(int[] nums) {
+    public Random_Pick_Index(int[] nums) {
         this.nums = nums;
         this.rnd = new Random();
     }
