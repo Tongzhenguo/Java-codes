@@ -10,9 +10,12 @@ import java.util.Vector;
  * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
  * The Sudoku board（9*9） could be partially filled, where empty cells are filled with the character '.'.
  */
+
 public class ValidSudoku {
 /*    public boolean isValidSudoku(char[][] board) {
         //每一行每一列每一宫都有数字且不重复 由此设置三个数组来判断
+        //第一个9是标识9个数字，第二个9是标识9行/9列/9宫
+        //数组默认为false，代表未出现过；反正代表已经出现过
         boolean [][]row = new boolean[9][9];
         boolean [][]col = new boolean[9][9];
         boolean [][]block = new boolean[9][9];
@@ -23,8 +26,7 @@ public class ValidSudoku {
                 if(row[num][i]||col[num][j]||block[num][i-i%3+j/3]){
                     return false;
                 }
-                //表示出现过
-                // 表示同一个九宫格：i-i%3+j/3
+                // 表示同一个九宫格：(i-i%3)+(j/3)
                 row[num][i]=col[num][j]=block[num][i-i%3+j/3]=true;
             }
         }
