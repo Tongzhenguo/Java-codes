@@ -10,6 +10,7 @@ import java.util.Vector;
  * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
  * The Sudoku board（9*9） could be partially filled, where empty cells are filled with the character '.'.
  */
+
 public class ValidSudoku {
 /*    public boolean isValidSudoku(char[][] board) {
         //每一行每一列每一宫都有数字且不重复 由此设置三个数组来判断
