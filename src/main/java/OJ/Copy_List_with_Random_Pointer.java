@@ -7,7 +7,7 @@ import datastructure.RandomListNode;
  *
  * A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
  * Return a deep copy of the list.
- * 一个链表，其每一个元素都有一个随机指针
+ * 一个链表，其每一个元素都有一个随机指针(可能指向链表任意结点或者置空)
  * 实现链表的深度复制
  */
 public class Copy_List_with_Random_Pointer {
