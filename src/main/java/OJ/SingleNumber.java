@@ -2,7 +2,9 @@ package OJ;
 
 /**
  * Created by Administrator on 2016/10/11.
- * 没想到解法，又怕以后遇到，所以从网上看了看
+ * Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+ * Note:
+ * Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
  *
  * 　晓东分析：
  *　　这个题目的关键在于线性的复杂度，这不由得让我们去想别的都是出现两次这样的条件。
