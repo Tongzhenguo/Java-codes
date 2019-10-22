@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class Find_All_Duplicates_in_an_Array {
 
+    // 因为nums[i]>0,故区分函数取-nums[i]<0,满足不等式的一定重复,要注意数组从0开始的问题
+    // 如果nums[i]包含0,区分函数取nums[i]+n>=n
+
     // when find a number i, flip the number at position i-1 to negative.
     // if the number at position i-1 is already negative, i is the number that occurs twice.
     public List<Integer> findDuplicates(int[] nums) {
