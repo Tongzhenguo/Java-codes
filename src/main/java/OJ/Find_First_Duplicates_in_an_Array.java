@@ -29,11 +29,15 @@ public class Find_First_Duplicates_in_an_Array {
             return false;
         }
         for(int i=0;i<length;i++){
-            if(numbers[i] >= length){
-                duplication[0] = numbers[i]-length;
+            int index = numbers[i];
+            if (index >= length) {
+                index -= length;
+            }
+            if (numbers[index] >= length) {
+                duplication[0] = index;
                 return true;
             }
-            numbers[numbers[i]] += length;
+            numbers[index] = numbers[index] + length;
         }
         duplication[0] = -1;
         return false;
@@ -43,7 +47,7 @@ public class Find_First_Duplicates_in_an_Array {
 
     public static void main(String[] args) {
         Find_First_Duplicates_in_an_Array findFirstDuplicatesinanArray = new Find_First_Duplicates_in_an_Array();
-        int[] array = {2,4,2,1,4};//{2,4,3,1,4};//{2,1,3,1,4};
+        int[] array = {2,1,3,1,4};//{2,4,3,1,4};//{2,1,3,1,4};
         //            {7,5,8,}
         int[] a = new int[1];
         System.out.println(findFirstDuplicatesinanArray.duplicate(array,array.length,a));
