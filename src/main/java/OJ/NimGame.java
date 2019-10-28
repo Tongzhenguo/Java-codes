@@ -21,14 +21,7 @@ public class NimGame {
      * @return
      */
     public boolean canWinNim(int n) {
-        boolean win = false;
-        for(int i=1;i<4;i++){
-            if( (n-i) %4 == 0){
-                win = true;
-                break;
-            }
-        }
-        return win;
+        return (n % 4 != 0);
     }
 
     public static void main(String[] args) {
