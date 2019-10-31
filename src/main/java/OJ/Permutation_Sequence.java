@@ -6,9 +6,11 @@ import java.util.List;
 /**
  * Created by Tongzhenguo on 2017/6/19.
  * The set [1,2,3,…,n] contains a total of n! unique permutations.
+ 给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。
 
  By listing and labeling all of the permutations in order,
  We get the following sequence (ie, for n = 3):
+ 按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
 
  "123"
  "132"
@@ -17,8 +19,13 @@ import java.util.List;
  "312"
  "321"
  Given n and k, return the kth permutation sequence.
+ 给定 n 和 k，返回第 k 个排列。
 
  Note: Given n will be between 1 and 9 inclusive.
+ 说明：
+ 给定 n 的范围是 [1, 9]。
+ 给定 k 的范围是[1,  n!]。
+
  *
  */
 public class Permutation_Sequence {
