@@ -1,4 +1,4 @@
-package OJ;
+package OJ.tree;
 
 import datastructure.TreeNode;
 
@@ -6,7 +6,7 @@ import datastructure.TreeNode;
  * Created by Administrator on 2016/10/16.
  * Given a binary tree, find its maximum depth.
  */
-public class MaximumDepthBinaryTree {
+public class Maximum_Depth_Of_Binary_Tree {
     public int maxDepth(TreeNode root) {
         if(root == null)
             return 0;

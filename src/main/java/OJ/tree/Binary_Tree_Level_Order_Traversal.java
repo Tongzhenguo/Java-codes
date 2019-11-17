@@ -1,4 +1,4 @@
-package OJ;
+package OJ.tree;
 
 import datastructure.TreeNode;
 
